@@ -28,8 +28,6 @@ A Word-style document editor with versioning. Documents are stored in **AWS S3**
 
 Open [`Server-Side/src/ej2-documenteditor-server/appsettings.json`](Server-Side/src/ej2-documenteditor-server/appsettings.json) and fill in your keys:
 
-![alt text](image.png)
-
 ```json
 "AccessKey": "Your Access Key from AWS S3",
 "SecretKey": "Your Secret Key from AWS S3",
@@ -63,6 +61,46 @@ This maps container port `80` to host port `6028`. The API is now available at `
 
 ---
 
+### 5. Point the React client at the API
+
+The React client calls the API at the URL defined in `src/index.js`. Update it to match the port from the previous step:
+
+```javascript
+let url = 'http://localhost:6028/api/documenteditor/';
+```
+
+Keep the Docker container running while using the React application.
+
+---
+
+### 6. Start the React client
+
+Open another terminal in:
+
+```text
+Client-Side/
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run start
+```
+
+Open the URL shown in the terminal, normally:
+
+```text
+http://localhost:3000
+```
+
+---
+
 ## What flows through which endpoint
 
 | Action | Endpoint |
@@ -75,3 +113,21 @@ This maps container port `80` to host port `6028`. The API is now available at `
 | Download a specific version | `DownloadFromS3` |
 
 All endpoints accept `{ fileName }` (or `{ DocumentName }` for compare/download) and read/write directly to the configured S3 bucket.
+
+## Resources
+
+- **Product page:**   [Syncfusion® React DOCX Editor](https://www.syncfusion.com/docx-editor-sdk/react-docx-editor?utm_source=github&utm_medium=listing&utm_campaign=github-github-documenteditor-examples) 
+
+- **Documentation:**   [Syncfusion® React DOCX Editor - Documentation](https://help.syncfusion.com/document-processing/word/word-processor/react/overview?utm_source=github&utm_medium=listing&utm_campaign=github-github-documenteditor-examples) 
+
+- **Online demo:**   [Syncfusion® React DOCX Editor - Online demo](https://document.syncfusion.com/demos/docx-editor/react/#/tailwind3/document-editor/default?utm_source=github&utm_medium=listing&utm_campaign=github-github-documenteditor-examples) 
+
+## Support and feedback 
+
+For any other queries, reach our [Syncfusion® support team](https://support.syncfusion.com/?utm_source=github&utm_medium=listing&utm_campaign=github-github-documenteditor-examples) or post the queries through the [community forums](https://www.syncfusion.com/forums?utm_source=github&utm_medium=listing&utm_campaign=github-github-documenteditor-examples). 
+
+Request new feature through [Syncfusion® feedback portal](https://www.syncfusion.com/feedback?utm_source=github&utm_medium=listing&utm_campaign=github-github-documenteditor-examples). 
+
+## License
+
+This is a commercial product and requires a paid license for possession or use Syncfusion's licensed software, including this component, is subject to the terms and conditions of [Syncfusion's EULA](https://www.syncfusion.com/license/studio/34.1.29/syncfusion_essential_studio_eula.pdf?utm_source=github&utm_medium=listing&utm_campaign=github-github-documenteditor-examples). You can purchase a licnense [here](https://www.syncfusion.com/sales/products?utm_source=github&utm_medium=listing&utm_campaign=github-github-documenteditor-examples) or start a free 30\-day trial [here](https://www.syncfusion.com/account/manage-trials/start-trials?utm_source=github&utm_medium=listing&utm_campaign=github-github-documenteditor-examples). 

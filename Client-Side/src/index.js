@@ -47,14 +47,8 @@ const DocumentList = () => {
   let editorcontainer = useRef(null);
   let treeObj = useRef(null);
   let titleBar;
-  let serviceUrl = 'http://localhost:62869/';
-  let currentUser = 'Guest user';
-  let operations = [];
-  let contentChanged = false;
-  let connection;
- 
-  let selectedNode;
-  let url = 'http://localhost:62870/api/documenteditor/';
+
+  let url = 'http://localhost:6028/api/documenteditor/';
   //Fetches the list of available documents from the server. No static data is used.
   const refreshDocumentList = () => {
     let baseUrl = url + 'GetAllDocumentsFromS3';
